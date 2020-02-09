@@ -15,7 +15,6 @@ public class MovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         KeyboardMovement();
         MouseRotation();
     }
@@ -30,8 +29,8 @@ public class MovementScript : MonoBehaviour
         var mouse = ProjectedMousePoint();
         var direction = mouse - transform.position;
 
-        var angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(-angle, new Vector3(0, 0, 1));
+        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, new Vector3(0, 0, 1));
     }
 
     Vector3 ProjectedMousePoint() {
