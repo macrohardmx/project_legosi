@@ -15,7 +15,7 @@ public class MovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var move = new Vector3(-Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal"));
+        var move = new Vector3(-Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"), 0);
         transform.position += move * speed * Time.deltaTime;
     }
 }
